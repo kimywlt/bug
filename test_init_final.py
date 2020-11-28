@@ -786,7 +786,7 @@ class taskCog(commands.Cog):
 						continue
 					continue
 				t.cancel()
-		await ctx.send( '< 보탐봇 명치 맞고 숨 고르기 중! 잠시만요! >', tts=False)
+		await ctx.send( '< 징징!! 너무 아프긔 으앙 >', tts=False)
 		print("명치!")
 		await dbSave()
 		await data_list_Save("kill_list.ini", "-----척살명단-----", kill_Data)
@@ -799,7 +799,7 @@ class taskCog(commands.Cog):
 		if basicSetting[21] != "1":
 			print("명치복구완료!")
 			await dbLoad()
-			await self.bot.get_channel(channel).send( '< 다시 왔습니다!(보이스 미사용) >', tts=False)
+			await self.bot.get_channel(channel).send( '< 징징!다시왔긔 (보이스 미사용) >', tts=False)
 
 		boss_task = asyncio.Task(self.boss_check())
 		return
@@ -852,7 +852,7 @@ class taskCog(commands.Cog):
 					await self.bot.get_channel(basicSetting[6]).connect(reconnect=True)
 					if self.bot.voice_clients[0].is_connected() :
 						await dbLoad()
-						await self.bot.get_channel(channel).send( '< 다시 왔습니다! >', tts=False)
+						await self.bot.get_channel(channel).send( '< 징징!다시왔긔 >', tts=False)
 						print("명치복구완료!")
 
 		while not self.bot.is_closed():
